@@ -279,7 +279,7 @@ define stunnel::tun (
       }
     }
 
-    'Ubuntu': {
+    'Debian': {
       # Ubuntu uses one generic init.d script (stunnel4) for all services.
     }
 
