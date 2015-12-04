@@ -158,7 +158,7 @@ define stunnel::tun (
     false   => 'no',
     default => $fips,
   }
-  validate_re($fips_on, '^yes$|^no$', 'The fips option must be true/false or yes/no.')
+  validate_re($fips_on, '^yes$|^no$|^$', 'The fips option must be true/false or yes/no or empty to disable.')
 
   # Configure fips
   $foreground_on = $foreground ? {
