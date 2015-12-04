@@ -280,23 +280,7 @@ define stunnel::tun (
     }
 
     'Ubuntu': {
-      file { "/etc/init.d/${service}-${name}":
-        ensure  => file,
-        owner   => 0,
-        group   => 0,
-        mode    => '0755',
-        content => template("${module_name}/init/stunnel.conf.erb"),
-        require => Package[$package],
-        before  => Service["${service}-${name}"],
-      } ~>
-      service { "${service}-${name}":
-        ensure     => running,
-        enable     => true,
-        hasrestart => true,
-        hasstatus  => true,
-        require    => File_line["service ${name}-tun"],
-        subscribe  => File["${conf_dir}/${name}.conf"],
-      }
+      # Ubuntu uses one generic init.d script (stunnel4) for all services.
     }
 
     'AIX': {
