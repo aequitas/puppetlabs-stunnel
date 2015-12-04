@@ -70,6 +70,7 @@ class stunnel::params {
       $conf_dir = '/etc/stunnel'
       $pid_dir  = '/var/run'
       $log_dir  = '/var/log/stunnel'
+      $service     = 'stunnel'
     }
 
     Debian: {
@@ -86,6 +87,7 @@ class stunnel::params {
       $log_dir  = '/var/log/stunnel'
       $package  = 'stunnel'
       $pid_dir  = '/var/run'
+      $service  = 'stunnel'
     }
 
     default: {
@@ -98,7 +100,6 @@ class stunnel::params {
   $debug_level = '4'
   $fips        = 'no'
   $foreground  = 'no'
-  $service     = 'stunnel'
   $log         = 'append'
   $output      = '/var/log/stunnel.log'
   $syslog      = 'yes'
