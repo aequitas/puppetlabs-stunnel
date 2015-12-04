@@ -280,7 +280,9 @@ define stunnel::tun (
     }
 
     'Debian': {
-      # Ubuntu uses one generic init.d script (stunnel4) for all services.
+      # Ubuntu uses one generic init.d script (stunnel4) for all tunnels.
+
+      File_line["service ${name}-tun"] ~> Service[$service]
     }
 
     'AIX': {
