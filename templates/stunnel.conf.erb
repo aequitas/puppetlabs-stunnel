@@ -11,7 +11,7 @@ compression = <%= @compression %>
 
 <% if @debug_level -%>
 ; Set our debug level
-debug = <%= debug_level %>
+debug = <%= @debug_level %>
 <% end -%>
 
 <% if @fips_on -%>
@@ -109,7 +109,7 @@ protocol = <%= @protocol %>
 <% end -%>
 
 <% if @ssl_version_real and !@ssl_version_real.empty? -%>
-sslVersion = <%= ssl_version_real %>
+sslVersion = <%= @ssl_version_real %>
 <% end -%>
 
 <% if @verify_stun and !@verify_stun.empty? -%>
